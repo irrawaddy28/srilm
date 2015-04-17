@@ -1,0 +1,2 @@
+# srilm
+srilm installation script
