@@ -26,7 +26,7 @@ dpkg -i libiconv-hook1_0.0.20021209-10ubuntu2_amd64.deb
 wget http://mirrors.kernel.org/ubuntu/pool/universe/liba/libapache-mod-encoding/libiconv-hook-dev_0.0.20021209-10ubuntu2_amd64.deb
 dpkg -i libiconv-hook-dev_0.0.20021209-10ubuntu2_amd64.deb
 
-## Fetch package libinconv (latest package is libiconv-1.14.tar.gz)
+## Fetch package libiconv (latest package is libiconv-1.14.tar.gz)
 wget http://ftp.gnu.org/pub/gnu/libiconv/libiconv-1.14.tar.gz
 tar -xvzf libiconv-1.14.tar.gz
 
@@ -66,8 +66,10 @@ cd ..
 tar -xvzf srilm-1.7.1.tar.gz
 
 ## Change the default installation path to desired path. For me, desired path was "/usr/share/srilm"
+## To do this, change the following line in Makefile 
+## from "# SRILM = /home/speech/stolcke/project/srilm/devel" to "SRILM = /usr/share/srilm"
 cd srilm-1.7.1
-sed -i 's:# SRILM =.*:SRILM = /usr/share/srilm:' srilm-1.7.1/Makefile
+sed -i 's:# SRILM =.*:SRILM = /usr/share/srilm:' Makefile
 cd ..
 
 ## Copy srilm to /usr/share/srilm, cd, and make
